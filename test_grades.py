@@ -1,4 +1,5 @@
 import csv
+import statistics
 
 outfile = open("output.csv",'w')
 outfile_header = "First Name, Surname, Average, Grade\n"
@@ -9,7 +10,9 @@ with open('input.csv','r') as csv_file:
     for line in csv_reader:
         student_first_name = line[0]
         student_last_name = line[1]
-        avg_mark = round((int(line[2])+int(line[3])+int(line[4])+int(line[5]))/4,1) 
+        marks = line[2:6]
+        marks_list = [int(i) for i in marks]
+        avg_mark = round(statistics.mean(marks_list),1)
         if avg_mark >=80:
             grade = "A"
         elif avg_mark >=70:
