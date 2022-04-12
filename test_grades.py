@@ -16,7 +16,7 @@ with open('input.csv','r') as csv_file:
         if avg_mark >=80:
             grade = "A+"
         elif avg_mark >=70:
-            grade = "B"
+            grade = "B-"
         elif avg_mark >=60:
             grade = "C"
         elif avg_mark >=50:
